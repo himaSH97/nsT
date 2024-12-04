@@ -1,5 +1,6 @@
 import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
+import 'dotenv/config';
 
 @Controller()
 export class AppController {
@@ -12,6 +13,6 @@ export class AppController {
 
   @Get('/app')
   app(): any {
-    return { code: 'running' };
+    return process.env.DATABASE_URL || 'No DATABASE_URL found';
   }
 }

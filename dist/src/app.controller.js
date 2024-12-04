@@ -23,6 +23,9 @@ let AppController = class AppController {
     app() {
         return process.env.DATABASE_URL || 'No DATABASE_URL found';
     }
+    app2() {
+        return this.appService.test();
+    }
 };
 exports.AppController = AppController;
 __decorate([
@@ -37,6 +40,12 @@ __decorate([
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", Object)
 ], AppController.prototype, "app", null);
+__decorate([
+    (0, common_1.Get)('/app2'),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", Object)
+], AppController.prototype, "app2", null);
 exports.AppController = AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

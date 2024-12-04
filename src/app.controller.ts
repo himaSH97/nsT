@@ -15,4 +15,9 @@ export class AppController {
   app(): any {
     return process.env.DATABASE_URL || 'No DATABASE_URL found';
   }
+
+  @Get('/app2')
+  app2(): any {
+    return this.appService.test();
+  }
 }

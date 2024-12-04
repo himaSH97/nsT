@@ -8,9 +8,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppService = void 0;
 const common_1 = require("@nestjs/common");
+const db_1 = require("./db");
+const schema_1 = require("./db/schema");
 let AppService = class AppService {
     getHello() {
         return 'Hello World!';
+    }
+    async test() {
+        const data = await db_1.db.select().from(schema_1.users);
+        return data;
     }
 };
 exports.AppService = AppService;

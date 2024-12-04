@@ -13,7 +13,7 @@ export class AppController {
 
   @Get('/app')
   app(): any {
-    return process.env.DATABASE_URL || 'No DATABASE_URL found';
+    return 'No DATABASE_URL found';
   }
 
   @Get('/app2')

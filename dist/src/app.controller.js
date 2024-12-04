@@ -21,7 +21,7 @@ let AppController = class AppController {
         return this.appService.getHello();
     }
     app() {
-        return process.env.DATABASE_URL || 'No DATABASE_URL found';
+        return 'No DATABASE_URL found';
     }
     app2() {
         return this.appService.test();
